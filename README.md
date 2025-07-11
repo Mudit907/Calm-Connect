@@ -1,4 +1,4 @@
-🌿 Calm-Connect — An Intelligent Therapy Recommender for Mental Wellness
+🌿 *Calm-Connect — An Intelligent Therapy Recommender for Mental Wellness*
 Hi Reddit!
 I'm excited to share a personal project I’ve been working on called Calm-Connect — a mental wellness platform that blends AI-driven recommendations with traditional and contemporary therapeutic practices.
 
