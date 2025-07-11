@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Therapy Recommendation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Therapy Recommendation System</h1>
+    <form method="POST" action="/">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+      
+        <label for="text">Describe how you feel:</label>
+        <textarea id="text" name="text" required></textarea>
+      
+        <button type="submit">Get Recommendation</button>
+      </form>
+      
+
+    {% if result %}
+      <h2>Recommended Therapies:</h2>
+      <ul>
+        {% for therapy in result %}
+          <li><a href="{{ therapy }}" target="_blank">{{ therapy }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</body>
+</html>

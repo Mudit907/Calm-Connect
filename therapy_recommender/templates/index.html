@@ -1,0 +1,32 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Therapy Recommendation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Therapy Recommendation System</h1>
+    <form action="/predict" method="POST">
+      <label for="age">Enter your age:</label><br>
+      <input type="number" id="age" name="age" required><br><br>
+
+      <label for="text">Describe how you're feeling:</label><br>
+      <textarea id="text" name="text" rows="5" cols="50" required></textarea><br><br>
+
+      <input type="submit" value="Get Recommendation">
+    </form>
+
+    {% if result %}
+      <h2>Recommended Therapies:</h2>
+      <ul>
+        {% for therapy in result %}
+          <li><a href="{{ therapy }}" target="_blank">{{ therapy }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</body>
+</html>

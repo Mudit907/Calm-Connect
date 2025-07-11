@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Therapy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="audio.css">
+
+<!-- particles.js CDN -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+  <h1><span class="typing"></span></h1>
+  <button id="darkToggle"><i class="ri-moon-line"></i></button>
+</header>
+
+<section class="carousel">
+  <div class="slide active" data-audio="rain">
+    <h2>Rain Therapy</h2>
+    <div class="visualizer"></div>
+  </div>
+
+  <div class="slide" data-audio="forest">
+    <h2>Forest Therapy</h2>
+    <div class="visualizer"></div>
+  </div>
+
+  <div class="slide" data-audio="waves">
+    <h2>Ocean Waves</h2>
+    <div class="visualizer"></div>
+  </div>
+</section>
+
+<audio id="rain" src="audios/rain.mp3"></audio>
+<audio id="forest" src="audios/forest.mp3"></audio>
+<audio id="waves" src="audios/waves.mp3"></audio>
+<audio id="flute" src="C:\Users\mudit\stress-relief-app\stress-relief-website\sounds\flute.mp3"></audio>
+<audio id="guitar" src="C:\Users\mudit\stress-relief-app\stress-relief-website\sounds\guitar.mp3"></audio>
+<audio id="piano" src="C:\Users\mudit\stress-relief-app\stress-relief-website\sounds\piano.mp3"></audio>
+
+
+<section class="instruments">
+  <h2>Try Instrumental Therapy</h2>
+  <div class="instrument-cards">
+    <div class="card" onclick="playSound('guitar.mp3')">
+      <img src="https://www.mi.edu/wp-content/uploads/2018/12/Guitar-History-How-the-Guitar-has-Evolved-1080x675.jpg" alt="Guitar">
+      <h3>Guitar</h3>
+    </div>
+
+    <div class="card" onclick="playSound('piano.mp3')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK-_oCyMNRntzUch7Pi9Qbt8UNi5pyQPnPmw&s" alt="Piano">
+      <h3>Piano</h3>
+    </div>
+
+    <div class="card" onclick="playSound('flute.mp3')">
+      <img src="https://learnfluteonline.com/wp-content/uploads/2015/09/Why-Play-the-Flute-1024x585.png" alt="Flute">
+      <h3>Flute</h3>
+    </div>
+  </div>
+</section>
+
+<section class="recommended-books">
+  <h2>Recommended Audio Books</h2>
+  <div class="books-grid">
+    <div class="book">
+      <h3>Life's Amazing Secrets</h3>
+      <p>by Gaur Gopal Das</p>
+    </div>
+    <div class="book">
+      <h3>Atomic Habits</h3>
+      <p>by James Clear</p>
+    </div>
+    <div class="book">
+      <h3>How to Talk to Anyone</h3>
+      <p>by Leil Lowndes</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- JS Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="audio.js"></script>
+
+<script>
+// Play Sound Function for Instrument Therapy
+function playSound(soundFile) {
+  const audio = new Audio('audios/' + soundFile);
+  audio.play();
+}
+</script>
+
+</body>
+</html>

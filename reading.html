@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reading Therapy</title>
+  <link rel="stylesheet" href="reading.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<section id="reading-therapy" class="reading-section">
+  <div class="reading-container">
+    <h2> Reading Therapy</h2>
+    <p class="intro-text">
+      Discover the power of words to soothe the mind and uplift the spirit. Dive into short stories, motivational articles, and inspiring quotes — each crafted to bring clarity and calm.
+    </p>
+
+    <!-- SHORT STORIES -->
+    <h3 class="reading-subheading"> Short Stories</h3>
+    <div class="reading-grid">
+      <div class="reading-card" onclick="openModal('story1')" data-aos="fade-up">
+        <h4>The Power of Persistence</h4>
+        <p>A boy who never gave up...</p>
+      </div>
+      <div class="reading-card" onclick="openModal('story2')" data-aos="fade-up">
+        <h4>The Mountain Within</h4>
+        <p>Climbing the toughest climb yet...</p>
+      </div>
+      <div class="reading-card" onclick="openModal('story3')" data-aos="fade-up">
+        <h4>Silent Strength</h4>
+        <p>Her calmness shook the world...</p>
+      </div>
+    </div>
+
+    <!-- MOTIVATIONAL ARTICLES -->
+    <h3 class="reading-subheading"> Motivational Articles</h3>
+    <div class="reading-grid">
+      <div class="reading-card" onclick="openModal('article1')" data-aos="fade-up">
+        <h4>Overcoming Self-Doubt</h4>
+        <p>Train your mind to believe again...</p>
+      </div>
+      <div class="reading-card" onclick="openModal('article2')" data-aos="fade-up">
+        <h4>Habits of Inner Peace</h4>
+        <p>Daily rituals that reset your soul...</p>
+      </div>
+      <div class="reading-card" onclick="openModal('article3')" data-aos="fade-up">
+        <h4>Unlocking Mind Power</h4>
+        <p>Discover strength hidden in thought...</p>
+      </div>
+    </div>
+
+    <!-- INSPIRATIONAL QUOTES -->
+    <h3 class="reading-subheading"> Inspirational Quotes</h3>
+    <div class="reading-grid">
+      <div class="reading-card" onclick="openModal('quote1')" data-aos="fade-up">
+        <h4>"Stars can't shine without darkness."</h4>
+        <p>Let your light rise through struggles.</p>
+      </div>
+      <div class="reading-card" onclick="openModal('quote2')" data-aos="fade-up">
+        <h4>"Breathe. It’s just a bad day, not a bad life."</h4>
+        <p>Take a pause, not a defeat.</p>
+      </div>
+      <div class="reading-card" onclick="openModal('quote3')" data-aos="fade-up">
+        <h4>"The comeback is always stronger."</h4>
+        <p>Because you’re not done yet.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS -->
+  <div id="story1" class="reading-modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('story1')">&times;</span>
+      <h3>The Power of Persistence</h3>
+      <p>Once there was a boy who failed multiple times but never gave up. His persistence led him to greatness. This story reminds us that failure is not the opposite of success but part of it...</p>
+    </div>
+  </div>
+
+  <div id="story2" class="reading-modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('story2')">&times;</span>
+      <h3>The Mountain Within</h3>
+      <p>He stood at the base of the impossible. With each step, he climbed not just a peak — but the fear within himself. A tale of courage, resilience, and self-discovery.</p>
+    </div>
+  </div>
+
+  <div id="quote1" class="reading-modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('quote1')">&times;</span>
+      <h3>"Stars can't shine without darkness."</h3>
+      <p>Darkness is not the end — it's the contrast your light needs to shine brighter. Embrace your shadows, for they help reveal your brilliance.</p>
+    </div>
+  </div>
+
+  <!-- Add remaining modals here -->
+  <section id="recommended-reads" class="recommended-section">
+    <div class="reading-container">
+      <h2> Recommended Reads</h2>
+      <p class="intro-text">
+        Immerse yourself in some of the best books that will elevate your mind and spirit. Each one has been chosen to help you on your journey to personal growth and well-being.
+      </p>
+  
+      <div class="reading-grid">
+
+<div class="reading-card recommended-card">
+    <img src="https://m.media-amazon.com/images/I/81TwewImvVL._SL1500_.jpg" alt="Stop Overthinking" class="book-cover">
+    <h4>Stop Overthinking</h4>
+    <p>Learn how to control your thoughts and stop overthinking for better mental well-being. A practical guide to ease your mind.</p>
+    <a href="https://www.amazon.in/Stop-Overthinking-Nick-Trenton/dp/014345921X/ref=sr_1_2?crid=Q8B0T7QK05RU&dib=eyJ2IjoiMSJ9.FrhDrpzisXV15gh3sD-7WUxrlLQYK7Tiw4CR7rcs7UxkgeJvgpLUpWn1Kf6FuexbWWmHRv0YxIJTzs7zRCAK5WBwESIZ8zNKFHHG5UQFQo5NM-qXji463J0BURDUBVKYinP0EZzI5kvcpKtMBX991d7do_6mKs0z24h9VuWVUGw7njCtgRBKD--yl1O1bILempDPopI8LYzzXAcMUA8JPOsvGU-dqen0-LSYvqjNSMs.6L43-11vNIHJ4_bXwAPmSppB04-PB2MbGARQ-NjX0Y4&dib_tag=se&keywords=books+to+help+with+mental+stress&qid=1744626848&sprefix=books+to+hel+with+mental+stres%2Caps%2C251&sr=8-2" target="_blank" class="read-now-btn">Read Now</a>
+  </div>
+  
+  
+        <!-- Book 2 -->
+<div class="reading-card recommended-card">
+    <img src="https://m.media-amazon.com/images/I/710cYy40DUL._SL1500_.jpg" alt="Courage To Be Disliked" class="book-cover">
+    <h4>Courage To Be Disliked</h4>
+    <p>Learn how to free yourself from societal expectations and find true happiness. A philosophical guide that encourages self-empowerment and self-acceptance.</p>
+    <a href="https://www.amazon.in/Courage-Be-Disliked-yourself-happiness/dp/1760630721/ref=sr_1_5?crid=Q8B0T7QK05RU&dib=eyJ2IjoiMSJ9.FrhDrpzisXV15gh3sD-7WUxrlLQYK7Tiw4CR7rcs7UxkgeJvgpLUpWn1Kf6FuexbWWmHRv0YxIJTzs7zRCAK5WBwESIZ8zNKFHHG5UQFQo5NM-qXji463J0BURDUBVKYinP0EZzI5kvcpKtMBX991d7do_6mKs0z24h9VuWVUGw7njCtgRBKD--yl1O1bILempDPopI8LYzzXAcMUA8JPOsvGU-dqen0-LSYvqjNSMs.6L43-11vNIHJ4_bXwAPmSppB04-PB2MbGARQ-NjX0Y4&dib_tag=se&keywords=books+to+help+with+mental+stress&qid=1744626848&sprefix=books+to+hel+with+mental+stres%2Caps%2C251&sr=8-5" target="_blank" class="read-now-btn">Read Now</a>
+  </div>
+  
+  
+        <!-- Book 3 -->
+<div class="reading-card recommended-card">
+    <img src="https://m.media-amazon.com/images/I/51EESQGC5iL._SY425_.jpg" alt="Ikigai" class="book-cover">
+    <h4>Ikigai</h4>
+    <p>Discover the Japanese secret to a long and happy life. Ikigai helps you understand your purpose in life and brings fulfillment through balance and mindfulness.</p>
+    <a href="https://www.amazon.in/IKIGAI-book-readers-Hector-Garcia/dp/B0F4KHL7NQ/ref=sr_1_1_sspa?sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank" class="read-now-btn">Read Now</a>
+  </div>
+  
+  
+        <!-- Book 4 -->
+<div class="reading-card recommended-card">
+    <img src="https://m.media-amazon.com/images/I/912g5f4ngPL._SY466_.jpg" alt="The Mindfulness Puzzle Book" class="book-cover">
+    <h4>The Mindfulness Puzzle Book</h4>
+    <p>Relax, unwind, and challenge your mind with puzzles that foster mindfulness. A perfect way to enhance focus, reduce stress, and find tranquility through interactive puzzles.</p>
+    <a href="https://www.amazon.in/MINDFULNESS-PUZZLE-BOOK-RELAXING-STRESS/dp/1472137507/ref=sr_1_1?crid=4KG36FSB9G6M&dib=eyJ2IjoiMSJ9.Sd7uLb4vfuNotw7YoyqMLepaMeslKzJ4tn4-YxckR5xhExOyxk9Z3I8GTvQpVfFgjj-x_nJyhkzOWsNskSVKGfyZA-B4zRx88BKBZ0dY8tFAuGm9FShQbZUJfL_KYmlTGlsqI0tkMucONs7sqc-Q2V-NV2zC0-KCxqwbM-Aerc_wst_CnQm8mMJzSIJ3qjRccNN8_t7sStaEHrS58JcwSiD2A1mBMT9yCBtILGbdshQ.RNRu35oBVapSWHtnkIIOyUsiT8sA0Rg8oPrjVyL3p3s&dib_tag=se&keywords=relaxing+books&qid=1744627383&sprefix=relaxing+books%2Caps%2C274&sr=8-1" target="_blank" class="read-now-btn">Read Now</a>
+  </div>
+  
+
+      </div>
+     </div>
+  </section>
+</section>
+
+<script src="reading.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,547 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ::-webkit-scrollbar {
+    background: transparent;
+    width: 0.4rem;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(173, 173, 173, 0.2);
+    border-radius: 10px;
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(173, 173, 173, 0.5);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-y: overlay;
+  }
+  
+  body {
+    background-color: #040404;
+    /* Using 'Inter' as it's a clean and professional sans-serif */
+    font-family: "Inter", sans-serif;
+    color: white;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  hr {
+    width: 90%;
+    margin: 2rem auto;
+    border-color: #2b2c28;
+  }
+  
+  .section-headings {
+    font-size: 2.5rem; /* Slightly reduced for a more refined look */
+    /* Using 'Montserrat' for a slightly more stylized professional feel */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Making it bolder for emphasis */
+    text-decoration: underline;
+    text-underline-offset: 0.5rem; /* Adjusting underline spacing */
+    margin: 3rem 0;
+    text-align: center;
+    color: #dce1de;
+  }
+  
+  /* Navbar Styles */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    padding: 1% 6%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+  }
+  
+  .audio-logo {
+    width: 80px;
+    padding: 0;
+  }
+  
+  .nav-links {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  
+  .nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem; /* Slightly smaller for a cleaner look */
+    font-weight: 400;
+    /* Using 'Poppins' for a modern and readable sans-serif for navigation */
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .nav-links ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: cyan;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  
+  .nav-links ul li:hover::after {
+    width: 100%;
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 200;
+  }
+  
+  .hamburger svg {
+    height: 25px;
+    width: 25px;
+  }
+  
+  /* Mobile Menu Styles */
+  .menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    background-color: #fff;
+    top: 85px;
+    left: 0;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  }
+  
+  .menu.open {
+    display: block;
+    width: 70%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(56, 56, 55, 1);
+    top: 0;
+    left: 0;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    animation: slideIn 0.5s ease-in-out;
+    z-index: 100;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      left: -150px;
+    }
+    100% {
+      left: 0px;
+    }
+  }
+  
+  .menu-link {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .menu-link li {
+    padding: 1.5rem; /* Adjusted padding */
+    font-weight: 500; /* Slightly lighter than bolder */
+  }
+  
+  .menu-link li:last-child {
+    padding-bottom: 0;
+  }
+  
+  .menu-link li a {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif; /* Consistent font for mobile menu */
+  }
+  
+  .menu-link li a:hover {
+    color: cyan;
+  }
+  
+  .close {
+    cursor: pointer;
+  }
+  
+  /* Header Styles */
+  header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("../images/spiritual.png");
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 50%;
+    z-index: 1;
+  }
+  
+  .center {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  #title {
+    /* Using 'Baloo Bhai 2' for the main title, keeping it unique but ensuring readability */
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 3.5rem; /* Slightly adjusted */
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  #subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem; /* More standard subtitle size */
+    line-height: 1.4;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px; /* Slightly reduced width */
+    height: 40px; /* Slightly reduced height */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem; /* Standard button text size */
+    line-height: 1.2;
+    background: #ff5832;
+    border-radius: 25px;
+    color: #F4F9F4;
+    text-decoration: none;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+  }
+  
+  .title-button:hover {
+    background-color: #ff947c;
+  }
+  
+  /* About Section Styles */
+  .about {
+    padding: 40px 20px;
+  }
+  
+  .bfit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .bfit img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .btext {
+    flex: 1;
+    margin-top: 2rem; /* Adjusted margin */
+    font-family: 'Montserrat', sans-serif;
+    padding: 2% 5%; /* Adjusted padding */
+  }
+  
+  .btext .baby-text {
+    font-size: 1rem; /* Standard paragraph size */
+    line-height: 1.7;
+    color: #dce1de;
+  }
+  
+  @media (max-width: 800px) {
+    .bfit {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .bfit img {
+      width: 80%;
+    }
+  
+    .btext {
+      margin-top: 1rem;
+      padding: 2% 2%;
+    }
+  }
+  
+  /* Steps Section Styles */
+  #steps {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  #steps > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Adjusted gap */
+    padding: 20px;
+  }
+  
+  .pt1 {
+    background-color: #1e1e1e;
+    padding: 1.5rem; /* Adjusted padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pt-head {
+    font-size: 1.1rem; /* Standard sub-heading size */
+    margin-bottom: 0.8rem; /* Adjusted margin */
+    color: #dce1de;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
+  
+  .pt-head i {
+    color: cyan;
+    margin-right: 0.5em;
+  }
+  
+  .pt1 p {
+    font-family: 'Montserrat', sans-serif;
+    color: #a7a7a7;
+    line-height: 1.6;
+    font-size: 0.9rem; /* Standard paragraph size */
+  }
+  
+  /* Events Section Styles */
+  #Events {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #141414;
+  }
+  
+  .footer-side-col {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* Adjusted gap */
+    padding: 20px;
+  }
+  
+  .col {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .col p {
+    color: white;
+    width: 100%;
+    height: auto;
+    background: rgb(6, 16, 37);
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem; /* Standard paragraph size */
+    padding: 1.5rem; /* Adjusted padding */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5;
+  }
+  
+  .col b {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Footer Styles */
+  footer {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .footer-container {
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensuring responsiveness */
+    background-color: rgb(6, 16, 37);
+    padding: 2rem 1rem;
+  }
+  
+  .footer-side-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* More flexible columns */
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-side-col > .col {
+    padding: 0;
+    flex-wrap: nowrap;
+  }
+  
+  .footer-container > .col {
+    padding: 1rem; /* Adjusted padding */
+    flex-basis: auto;
+    color: white;
+    text-align: left;
+  }
+  
+  .footer-container .col a:hover,
+  footer a:focus {
+    color: cyan;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-side-col {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Even smaller columns on smaller screens */
+    }
+  
+    .footer-container > .col {
+      text-align: center; /* Center text in columns on smaller screens */
+    }
+  }
+  
+  .footer-container .col a {
+    display: inline-block;
+    position: relative;
+    color: white;
+  }
+  
+  .footer-container .col ul li a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: cyan;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .footer-container .col ul li a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .footer-container p {
+    color: white;
+    margin-top: 0.5rem;
+    font-size: 0.85rem; /* Slightly smaller for footer text */
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .footerpara {
+    margin-left: -10px;
+  }
+  
+  .footer-container .col .email-id {
+    word-wrap: break-word;
+    text-decoration: underline;
+  }
+  
+  .email-id a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .footer-container .col h3 {
+    color: rgb(228, 26, 77);
+    font-size: 1rem; /* Adjusted footer heading size */
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    font-family: "Ubuntu", sans-serif;
+  }
+  
+  .footer-container .col img {
+    display: block;
+    margin: 0 auto;
+    width: 100px; /* Adjusted footer logo size */
+    cursor: pointer;
+  }
+  
+  .footer-container .col .footerheading {
+    display: flex;
+    color: white;
+    margin-top: 0.5px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.9rem; /* Adjusted size */
+  }
+  
+  .footer-container .col .footerpara {
+    display: flex;
+    margin-top: -19px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    letter-spacing: 2px; /* Reduced letter spacing */
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem; /* Adjusted size */
+  }
+  
+  .fab:hover {
+    text-decoration: none;
+  }
+  
+  .footer-container .col .sukoon {
+    color: rgb(30, 240, 191);
+    letter-spacing: 2px; /* Reduced letter spacing */
+  }
+  
+  .footer-container .col .social-menu ul {
+    display: flex;
+    gap: 0.8rem; /* Adjusted gap */
+    justify-content: flex-start; /* Align social icons to the left by default */
+  }

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Recommendation System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-purple-100 flex justify-center items-center min-h-screen p-4">
+    <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-2xl transition-transform hover:scale-105">
+        <h1 class="text-2xl font-semibold text-blue-600 text-center mb-6">Therapy Recommendation System</h1>
+        <form id="therapyForm" class="space-y-4">
+            <div>
+                <label for="age" class="block text-gray-700 text-sm font-bold mb-2">Age:</label>
+                <input type="number" id="age" name="age" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div>
+                <label for="phq9" class="block text-gray-700 text-sm font-bold mb-2">PHQ-9 Score (Depression):</label>
+                <input type="number" id="phq9" name="phq9" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div>
+                <label for="gad7" class="block text-gray-700 text-sm font-bold mb-2">GAD-7 Score (Anxiety):</label>
+                <input type="number" id="gad7" name="gad7" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+             <div>
+                <label for="bdi" class="block text-gray-700 text-sm font-bold mb-2">BDI Score (Depression):</label>
+                <input type="number" id="bdi" name="bdi" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div>
+                <label for="pclc" class="block text-gray-700 text-sm font-bold mb-2">PCL-C Score (Trauma):</label>
+                <input type="number" id="pclc" name="pclc" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div>
+                <label for="relationshipStatus" class="block text-gray-700 text-sm font-bold mb-2">Relationship Status:</label>
+                <select id="relationshipStatus" name="relationshipStatus" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                </select>
+            </div>
+            <div>
+                <label for="employmentStatus" class="block text-gray-700 text-sm font-bold mb-2">Employment Status:</label>
+                <select id="employmentStatus" name="employmentStatus" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Employed">Employed</option>
+                    <option value="Unemployed">Unemployed</option>
+                    <option value="Student">Student</option>
+                    <option value="Retired">Retired</option>
+                </select>
+            </div>
+            <div>
+                <label for="livingSituation" class="block text-gray-700 text-sm font-bold mb-2">Living Situation:</label>
+                <select id="livingSituation" name="livingSituation" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Alone">Alone</option>
+                    <option value="With Family">With Family</option>
+                    <option value="With Partner">With Partner</option>
+                     <option value="Group Home">Group Home</option>
+                </select>
+            </div>
+            <div>
+                <label for="majorLifeEvent" class="block text-gray-700 text-sm font-bold mb-2">Major Life Event:</label>
+                <select id="majorLifeEvent" name="majorLifeEvent" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="None">None</option>
+                    <option value="Loss">Loss</option>
+                    <option value="Job Change">Job Change</option>
+                    <option value="Relationship Change">Relationship Change</option>
+                    <option value="Trauma">Trauma</option>
+                </select>
+            </div>
+            <div>
+                <label for="therapyPreference" class="block text-gray-700 text-sm font-bold mb-2">Therapy Preference:</label>
+                <select id="therapyPreference" name="therapyPreference" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Individual">Individual</option>
+                    <option value="Group">Group</option>
+                    <option value="Online">Online</option>
+                    <option value="Family">Family</option>
+                </select>
+            </div>
+            <div>
+                <label for="traumaHistory" class="block text-gray-700 text-sm font-bold mb-2">Trauma History:</label>
+                <select id="traumaHistory" name="traumaHistory" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div>
+                <label for="substanceUseHistory" class="block text-gray-700 text-sm font-bold mb-2">Substance Use History:</label>
+                <select id="substanceUseHistory" name="substanceUseHistory" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Never Used">Never Used</option>
+                    <option value="Past Use">Past Use</option>
+                    <option value="Current Use">Current Use</option>
+                </select>
+            </div>
+            <div>
+                <label for="supportSystemRating" class="block text-gray-700 text-sm font-bold mb-2">Support System Rating (1-5):</label>
+                <input type="number" id="supportSystemRating" name="supportSystemRating" min="1" max="5" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <button type="submit" class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 ease-in-out">
+                Get Therapy Recommendation
+            </button>
+        </form>
+
+        <div id="results" class="mt-6 p-4 bg-gray-50 rounded-lg shadow-md hidden">
+            <h2 class="text-xl font-semibold text-green-600 mb-4">Recommended Therapy:</h2>
+            <p id="therapyRecommendation" class="text-gray-800 font-medium"></p>
+            <a id="therapyLink" href="#" class="mt-2 text-blue-600 hover:underline">Click here for more information</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('therapyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const age = parseInt(document.getElementById('age').value);
+            const phq9 = parseInt(document.getElementById('phq9').value);
+            const gad7 = parseInt(document.getElementById('gad7').value);
+             const bdi = parseInt(document.getElementById('bdi').value);
+            const pclc = parseInt(document.getElementById('pclc').value);
+            const relationshipStatus = document.getElementById('relationshipStatus').value;
+            const employmentStatus = document.getElementById('employmentStatus').value;
+            const livingSituation = document.getElementById('livingSituation').value;
+            const majorLifeEvent = document.getElementById('majorLifeEvent').value;
+            const therapyPreference = document.getElementById('therapyPreference').value;
+            const traumaHistory = document.getElementById('traumaHistory').value;
+            const substanceUseHistory = document.getElementById('substanceUseHistory').value;
+            const supportSystemRating = parseInt(document.getElementById('supportSystemRating').value);
+
+            // Basic validation (you can add more robust validation)
+            if (age < 0 || phq9 < 0 || gad7 < 0 || supportSystemRating < 1 || supportSystemRating > 5) {
+                alert('Please enter valid values.');
+                return;
+            }
+
+            // Create an object with the form data
+            const formData = {
+                Age: age,
+                'PHQ-9': phq9,
+                'GAD-7': gad7,
+                'BDI': bdi,
+                'PCL-C': pclc,
+                'Relationship Status': relationshipStatus,
+                'Employment Status': employmentStatus,
+                'Living Situation': livingSituation,
+                'Major Life Event': majorLifeEvent,
+                'Therapy Preference': therapyPreference,
+                'Trauma History': traumaHistory,
+                'Substance Use History': substanceUseHistory,
+                'Support System Rating': supportSystemRating,
+            };
+
+            // Use a simple mapping for demonstration.  In a real application, you'd send this
+            // data to your Python backend (Flask, Django, etc.) to get the model's prediction.
+            const recommendation = getTherapyRecommendation(formData);
+
+            // Display the result
+            const resultsDiv = document.getElementById('results');
+            const therapyRecommendationText = document.getElementById('therapyRecommendation');
+            const therapyLink = document.getElementById('therapyLink');
+            therapyRecommendationText.textContent = recommendation;
+
+            // Set the href based on the recommendation
+            let href = '';
+            switch (recommendation) {
+                case 'Audio Therapy':
+                    href = 'audio.html';
+                    break;
+                case 'Reading Therapy':
+                    href = 'reading.html';
+                    break;
+                case 'Laughter Therapy':
+                    href = 'laughing.html';
+                    break;
+                case 'Consult a doctor':
+                    href = 'consult_a_doctor.html'; //  Make sure this filename is correct
+                    break;
+                case 'Spiritual Therapy':
+                    href = 'spirituality.html';
+                    break;
+                case 'Yoga and Meditation Therapy':
+                    href = 'yoga.html';
+                    break;
+                default:
+                    href = '#'; // Or a general page
+            }
+            therapyLink.href = href;
+            therapyLink.textContent = 'Click here for more information'; // Consistent link text
+            resultsDiv.classList.remove('hidden');
+
+        });
+
+       function getTherapyRecommendation(data) {
+            const age = data.Age;
+            const phq9 = data['PHQ-9'];
+            const gad7 = data['GAD-7'];
+            const bdi = data['BDI'];
+            const pclc = data['PCL-C'];
+            const relationshipStatus = data['Relationship Status'];
+            const employmentStatus = data['Employment Status'];
+            const livingSituation = data['Living Situation'];
+            const majorLifeEvent = data['Major Life Event'];
+            const therapyPreference = data['Therapy Preference'];
+            const traumaHistory = data['Trauma History'];
+            const substanceUseHistory = data['Substance UseHistory'];
+            const supportSystemRating = data['Support System Rating'];
+
+            let ageCategory;
+            if (0 <= age <= 12) {
+                ageCategory = 'Children';
+            } else if (13 <= age <= 19) {
+                ageCategory = 'Adolescents';
+            } else if (20 <= age <= 35) {
+                ageCategory = 'Young Adults';
+            } else if (36 <= age <= 65) {
+                ageCategory = 'Adults';
+            } else if (age > 65) {
+                ageCategory = 'Older Adults';
+            } else {
+                ageCategory = 'Invalid Age';
+            }
+
+            const recommendations = ['Audio Therapy', 'Reading Therapy', 'Laughter Therapy', 'Consult a doctor', 'Spiritual Therapy', 'Yoga and Meditation Therapy'];
+
+            // Make a simple recommendation based on age and symptom scores.  This is just a placeholder.
+            if (ageCategory == 'Children') {
+                if (pclc > 40) {
+                    return 'Consult a doctor';
+                } else if (gad7 > 10 || phq9 > 10) {
+                    return 'Audio Therapy';
+                } else {
+                    return 'Reading Therapy';
+                }
+            } else if (ageCategory == 'Adolescents') {
+                if (substanceUseHistory == 'Current Use') {
+                    return 'Consult a doctor';
+                } else if (pclc > 45) {
+                    return 'Consult a doctor';
+                } else if (gad7 > 15 || phq9 > 15) {
+                    return 'Audio Therapy';
+                } else {
+                    return 'Reading Therapy';
+                }
+            } else if (ageCategory == 'Young Adults' || ageCategory == 'Adults') {
+                if (pclc > 50) {
+                    return 'Consult a doctor';
+                } else if (bdi > 20) {
+                    return 'Consult a doctor';
+                } else if (gad7 > 10) {
+                    return 'Audio Therapy';
+                } else if (substanceUseHistory == 'Current Use') {
+                    return 'Consult a doctor';
+                } else if (relationshipStatus == 'Divorced' || relationshipStatus == 'Widowed' && supportSystemRating < 3) {
+                    return 'Laughter Therapy';
+                } else {
+                    return 'Yoga and Meditation Therapy';
+                }
+            } else if (ageCategory == 'Older Adults') {
+                if (phq9 > 10 || gad7 > 10) {
+                    return 'Spiritual Therapy';
+                } else if (supportSystemRating < 3) {
+                    return 'Laughter Therapy';
+                } else {
+                   return 'Yoga and Meditation Therapy';
+                }
+            } else {
+                return 'Consult a doctor';
+            }
+        }
+    </script>
+</body>
+</html>
